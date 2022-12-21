@@ -1,6 +1,9 @@
-function displacements = implementation
+function displacements = implementation(quad_rule)
 %Solves for the displacements for homework 3. displacements have the same
-%shape as the ID array
+%shape as the ID array. Specify the quadrature rule with the quad_rule
+%input. Only 2 point and 3 point quadrature is possible. (You could add
+%more quadrature rules in ElementForceVector.m AND ElementStiffness.m)
+
 
 %IDArray
 [~, IDArray] = ID(1,1);
@@ -23,7 +26,7 @@ n_el1 = length(span1vec);
 %n_el2 = length(span2vec);
 
 %quadrature rule
-quad_rule = 3;
+%quad_rule = 3;
 
 %pre-allocation
 neq = max(IDArray, [], 'all'); %number of equations
